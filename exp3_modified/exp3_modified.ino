@@ -1,0 +1,27 @@
+int outputpin = A0;                   
+//this sets the ground pin to LOW and the input voltage pin to high
+void setup ()
+{
+  Serial.begin(9600);
+  //Setting the baud rate for Serial Monitor Communication 
+}
+
+void loop() //main loop
+{
+  int analogValue = analogRead(outputpin);
+  float millivolts = (analogValue/1024.0) * 3300; //3300 is the voltage provided by NodeMCU
+  float celsius = millivolts/10;
+  Serial.print("Degree Celsius=   ");
+  Serial.println(celsius);
+
+  //---------- Here is the calculation for Fahrenheit ----------//
+  float fahrenheit = ((celsius * 9)/5 + 32);
+  Serial.print("Degree Farenheit=   ");
+  Serial.println(fahrenheit);
+  if(fahrenheit>43)
+  {
+    tone(14,494,500);
+    delay(1000);
+  }
+  delay(1000);
+}
