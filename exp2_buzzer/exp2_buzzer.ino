@@ -6,5 +6,5 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   tone(14, 494, 500); 
-  delay(1000);
+  de+lay(1000);
 }

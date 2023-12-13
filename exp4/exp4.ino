@@ -6,6 +6,14 @@ WiFiServer server(80);
 #define LED_Green D7
 void setup() {
     // put your setup code here, to run once:
+    /*
+    red-L-one point of resistor-d5
+    red-S-gnd
+    y-L-one point of resistor-d6
+    y-S-gnd
+    g-L-one point of resistor-d7
+    g-S-gnd
+    */
   Serial.begin(9600);
   WiFi.begin("Soham","iambatman");
   while(WiFi.status()!=WL_CONNECTED)
